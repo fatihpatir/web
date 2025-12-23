@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim | Fatih Patır</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <i class="fas fa-code"></i> Fatih Patır
+            </a>
+            <div class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="about.html">Hakkımda</a></li>
+                <li><a href="skills.html">Dersler & Uzmanlık</a></li>
+                <li><a href="projects.html">Projeler</a></li>
+                <li><a href="contact.html" class="active">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>İletişim</h1>
+            <p style="color: var(--secondary);">Lütfen benimle iletişime geçmekten çekinmeyin</p>
+            <div class="divider" style="margin: 1rem 0 0 0;"></div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h2 style="margin-bottom: 1.5rem;">İletişim Bilgileri</h2>
+                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-school"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 0.3rem;">Okul</h4>
+                        <p style="color: var(--secondary);">Korkuteli Nene Hatun Mesleki ve Teknik Anadolu Lisesi</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 0.3rem;">E-Posta</h4>
+                        <p style="color: var(--secondary);">fatih.patir@meb.k12.tr</p>
+                    </div>
+                </div>
+                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
+                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-location-dot"></i></div>
+                    <div>
+                        <h4 style="margin-bottom: 0.3rem;">Adres</h4>
+                        <p style="color: var(--secondary);">Korkuteli, Antalya</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-area">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Adınız Soyadınız</label>
+                        <input type="text" class="form-control" name="name" required placeholder="Fatih Patır">
+                    </div>
+                    <div class="form-group">
+                        <label>E-Posta Adresiniz</label>
+                        <input type="email" class="form-control" name="email" required placeholder="example@mail.com">
+                    </div>
+                    <div class="form-group">
+                        <label>Mesajınız</label>
+                        <textarea class="form-control" name="message" rows="5" required
+                            placeholder="Mesajınızı buraya yazınız..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Gönder</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p>© 2025 – Fatih Patır | Bilişim Teknolojileri Öğretmeni</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
