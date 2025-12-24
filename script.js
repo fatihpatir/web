@@ -1,16 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Mobile Menu Toggle
-    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const logo = document.querySelector('.logo');
     const navLinks = document.querySelector('.nav-links');
 
-    if (mobileMenuBtn) {
-        mobileMenuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            document.body.classList.toggle('menu-active');
-            const icon = mobileMenuBtn.querySelector('i');
-            if (icon) {
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                navLinks.classList.toggle('active');
+                document.body.classList.toggle('menu-active');
+                const icon = logo.querySelector('i');
+                if (icon) {
+                    icon.classList.toggle('fa-terminal');
+                    icon.classList.toggle('fa-times');
+                }
             }
         });
     }
