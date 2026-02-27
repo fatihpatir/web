@@ -7,15 +7,62 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 0; }
-        .project-card { padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
-        .project-card h3 { color: var(--primary); margin-bottom: 10px; }
-        .category-h { margin-top: 40px; border-left: 4px solid var(--primary); padding-left: 15px; }
+        body {
+            margin: 0; padding: 0;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%);
+            min-height: 100vh; color: #fff; font-family: 'Inter', sans-serif;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 120px 20px 60px; }
+        
+        .page-title {
+            text-align: center; font-size: 2.5rem; letter-spacing: 6px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            margin-bottom: 40px; text-transform: uppercase;
+        }
+
+        .category-h {
+            font-size: 1rem; letter-spacing: 2px; color: var(--primary);
+            border-bottom: 1px solid rgba(0, 242, 255, 0.2);
+            padding-bottom: 8px; margin-top: 50px; text-transform: uppercase;
+        }
+
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px; padding: 25px 0;
+        }
+
+        /* Kartlar Sabitlendi - Hover Hareketi Kaldırıldı */
+        .project-card.glass {
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px; padding: 25px;
+            position: relative; transition: border-color 0.3s;
+        }
+
+        /* Sadece renk değişimi kalsın, hareket yok */
+        .project-card:hover { border-color: var(--primary); }
+
+        .project-card h3 { margin: 0 0 10px 0; color: #fff; font-size: 1.3rem; }
+        .project-card p { color: rgba(255,255,255,0.6); font-size: 0.9rem; line-height: 1.5; margin-bottom: 20px; }
+
+        .btn-outline {
+            display: inline-block; padding: 8px 20px; border: 1px solid var(--primary);
+            color: var(--primary); border-radius: 50px; text-decoration: none;
+            font-size: 12px; font-weight: bold; text-transform: uppercase;
+        }
+
+        .new-tag {
+            position: absolute; top: 15px; right: 15px; background: var(--secondary);
+            color: #fff; padding: 3px 8px; border-radius: 6px; font-size: 9px; font-weight: 800;
+        }
     </style>
 </head>
 <body>
     <nav class="navbar glass">
-        <div class="logo">Fatih Patır</div>
+        <div class="logo">FATİH PATIR</div>
         <ul class="nav-links">
             <li><a href="index.html">Anasayfa</a></li>
             <li><a href="projects.html" class="active">Projeler</a></li>
@@ -23,30 +70,33 @@
         </ul>
     </nav>
 
-    <main class="container" style="padding-top: 80px;">
-        <h2 style="text-align: center;">Tüm Projelerim</h2>
+    <main class="container">
+        <h1 class="page-title">TÜM PROJELER</h1>
 
         <h3 class="category-h">Oyunlar</h3>
         <div class="projects-grid">
-            <div class="project-card glass"><h3>Codeman</h3><p>Anakart üzerinde parkur oyunu.</p><a href="https://fatihpatir.github.io/codeman" class="btn btn-outline">Aç</a></div>
-            <div class="project-card glass"><h3>Neon Tetris</h3><p>Modern tetris deneyimi.</p><a href="https://fatihpatir.github.io/neontetris" class="btn btn-outline">Oyna</a></div>
-            <div class="project-card glass"><h3>Parkur</h3><p>Hızlı parkur oyunu.</p><a href="https://fatihpatir.github.io/parkur" class="btn btn-outline">Başla</a></div>
+            <div class="project-card glass"><span class="new-tag">YENİ</span><h3>Neon Vortex</h3><p>Halka tabanlı refleks oyunu.</p><a href="https://fatihpatir.github.io/ring" class="btn-outline">Oyna</a></div>
+            <div class="project-card glass"><span class="new-tag">YENİ</span><h3>Block Breaker</h3><p>Modern blok kırma deneyimi.</p><a href="https://fatihpatir.github.io/block" class="btn-outline">Başlat</a></div>
+            <div class="project-card glass"><span class="new-tag">YENİ</span><h3>Neon Snake</h3><p>Hızlı ve neon yılan oyunu.</p><a href="https://fatihpatir.github.io/snake" class="btn-outline">Oyna</a></div>
+            <div class="project-card glass"><h3>Codeman</h3><p>Anakart üzerinde parkur oyunu.</p><a href="https://fatihpatir.github.io/codeman" class="btn-outline">Aç</a></div>
+            <div class="project-card glass"><h3>Neon Tetris</h3><p>Modern tetris deneyimi.</p><a href="https://fatihpatir.github.io/neontetris" class="btn-outline">Oyna</a></div>
+            <div class="project-card glass"><h3>Parkur</h3><p>Hızlı parkur oyunu.</p><a href="https://fatihpatir.github.io/parkur" class="btn-outline">Başla</a></div>
         </div>
 
         <h3 class="category-h">Eğitim & Araçlar</h3>
         <div class="projects-grid">
-            <div class="project-card glass"><h3>Hocam</h3><p>Öğretmen uygulaması.</p><a href="https://fatihpatir.github.io/hocam" class="btn btn-outline">Git</a></div>
-            <div class="project-card glass"><h3>ElementGO</h3><p>Fen Bilgisi Element çalışması.</p><a href="https://fatihpatir.github.io/elementGO" class="btn btn-outline">Öğren</a></div>
-            <div class="project-card glass"><h3>Geri Sayım</h3><p>Etkinlik sayacı.</p><a href="https://fatihpatir.github.io/gerisay" class="btn btn-outline">Kur</a></div>
-            <div class="project-card glass"><h3>Mini Test</h3><p>Test denemesi.</p><a href="https://fatihpatir.github.io/minitest" class="btn btn-outline">Çöz</a></div>
+            <div class="project-card glass"><h3>Hocam</h3><p>Öğretmen uygulaması.</p><a href="https://fatihpatir.github.io/hocam" class="btn-outline">Git</a></div>
+            <div class="project-card glass"><h3>ElementGO</h3><p>Fen Bilgisi Element çalışması.</p><a href="https://fatihpatir.github.io/elementGO" class="btn-outline">Öğren</a></div>
+            <div class="project-card glass"><h3>Geri Sayım</h3><p>Etkinlik sayacı.</p><a href="https://fatihpatir.github.io/gerisay" class="btn-outline">Kur</a></div>
+            <div class="project-card glass"><h3>Mini Test</h3><p>Test denemesi.</p><a href="https://fatihpatir.github.io/minitest" class="btn-outline">Çöz</a></div>
         </div>
 
         <h3 class="category-h">Teknik & Okul</h3>
         <div class="projects-grid">
-            <div class="project-card glass"><h3>Gitar Akort</h3><p>Akort programı.</p><a href="https://fatihpatir.github.io/akort" class="btn btn-outline">Kullan</a></div>
-            <div class="project-card glass"><h3>Fusion 3D</h3><p>3D Tasarım uygulaması.</p><a href="https://fatihpatir.github.io/fusion" class="btn btn-outline">İncele</a></div>
-            <div class="project-card glass"><h3>11-B Portfolyo</h3><p>Sınıf çalışmaları.</p><a href="https://fatihpatir.github.io/05-06-11B" class="btn btn-outline">Gör</a></div>
-            <div class="project-card glass"><h3>BTU & Grafik</h3><p>Tasarım ve Grafik dersi.</p><a href="https://fatihpatir.github.io/BTU" class="btn btn-outline">BTU</a> <a href="https://fatihpatir.github.io/grafik" class="btn btn-outline">Grafik</a></div>
+            <div class="project-card glass"><h3>Gitar Akort</h3><p>Akort programı.</p><a href="https://fatihpatir.github.io/akort" class="btn-outline">Kullan</a></div>
+            <div class="project-card glass"><h3>Fusion 3D</h3><p>3D Tasarım uygulaması.</p><a href="https://fatihpatir.github.io/fusion" class="btn-outline">İncele</a></div>
+            <div class="project-card glass"><h3>11-B Portfolyo</h3><p>Sınıf çalışmaları.</p><a href="https://fatihpatir.github.io/05-06-11B" class="btn-outline">Gör</a></div>
+            <div class="project-card glass"><h3>BTU & Grafik</h3><p>Tasarım ve Grafik dersi.</p><a href="https://fatihpatir.github.io/BTU" class="btn-outline">BTU</a> <a href="https://fatihpatir.github.io/grafik" class="btn-outline">Grafik</a></div>
         </div>
     </main>
 </body>
