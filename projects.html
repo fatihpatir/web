@@ -1,261 +1,53 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeler | Fatih Patır</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 40px 0; }
+        .project-card { padding: 1.5rem; border-radius: 15px; border: 1px solid rgba(255,255,255,0.1); }
+        .project-card h3 { color: var(--primary); margin-bottom: 10px; }
+        .category-h { margin-top: 40px; border-left: 4px solid var(--primary); padding-left: 15px; }
+    </style>
 </head>
-
 <body>
-
     <nav class="navbar glass">
-        <div class="logo">
-            <i class="fas fa-terminal"></i> Fatih Patır
-        </div>
-
+        <div class="logo">Fatih Patır</div>
         <ul class="nav-links">
             <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="skills.html">Dersler</a></li>
             <li><a href="projects.html" class="active">Projeler</a></li>
             <li><a href="contact.html">İletişim</a></li>
         </ul>
     </nav>
 
-    <header class="page-header">
-        <div class="container">
-            <h1
-                style="background: linear-gradient(to right, var(--dark), var(--primary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                Projeler</h1>
-            <p style="color: var(--secondary); font-size: 1.2rem;">Geleceği Şekillendiren Uygulamalı Çalışmalar</p>
+    <main class="container" style="padding-top: 80px;">
+        <h2 style="text-align: center;">Tüm Projelerim</h2>
+
+        <h3 class="category-h">Oyunlar</h3>
+        <div class="projects-grid">
+            <div class="project-card glass"><h3>Codeman</h3><p>Anakart üzerinde parkur oyunu.</p><a href="https://fatihpatir.github.io/codeman" class="btn btn-outline">Aç</a></div>
+            <div class="project-card glass"><h3>Neon Tetris</h3><p>Modern tetris deneyimi.</p><a href="https://fatihpatir.github.io/neontetris" class="btn btn-outline">Oyna</a></div>
+            <div class="project-card glass"><h3>Parkur</h3><p>Hızlı parkur oyunu.</p><a href="https://fatihpatir.github.io/parkur" class="btn btn-outline">Başla</a></div>
         </div>
-    </header>
 
-    <main class="container">
-        <div class="grid">
-            <!-- ElementGO Projesi -->
-            <a href="https://fatihpatir.github.io/elementGO/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #ef4444, #f87171);">
-                        <i class="fas fa-atom"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>ElementGO</h3>
-                        <p>Kimya dersini eğlenceli hale getiren, elementleri öğreten interaktif bir eğitici oyun.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Kimya</span>
-                            <span class="tech-pill-small">Eğitim</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <h3 class="category-h">Eğitim & Araçlar</h3>
+        <div class="projects-grid">
+            <div class="project-card glass"><h3>Hocam</h3><p>Öğretmen uygulaması.</p><a href="https://fatihpatir.github.io/hocam" class="btn btn-outline">Git</a></div>
+            <div class="project-card glass"><h3>ElementGO</h3><p>Fen Bilgisi Element çalışması.</p><a href="https://fatihpatir.github.io/elementGO" class="btn btn-outline">Öğren</a></div>
+            <div class="project-card glass"><h3>Geri Sayım</h3><p>Etkinlik sayacı.</p><a href="https://fatihpatir.github.io/gerisay" class="btn btn-outline">Kur</a></div>
+            <div class="project-card glass"><h3>Mini Test</h3><p>Test denemesi.</p><a href="https://fatihpatir.github.io/minitest" class="btn btn-outline">Çöz</a></div>
+        </div>
 
-            <!-- Mini Test Projesi -->
-            <a href="https://fatihpatir.github.io/minitest/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Mini Test</h3>
-                        <p>Hızlı ve etkileşimli testler oluşturup çözebileceğiniz pratik bir değerlendirme platformu.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Web</span>
-                            <span class="tech-pill-small">LMS</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Padişahlar Projesi -->
-            <a href="https://fatihpatir07-debug.github.io/Padisahlar/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">
-                        <i class="fas fa-crown"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Osmanlı Padişahları</h3>
-                        <p>Osmanlı İmparatorluğu'nun padişahlarını, dönemlerini ve önemli olaylarını tanıtan eğitici bir
-                            rehber.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Tarih</span>
-                            <span class="tech-pill-small">Eğitim</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- BTU Projesi -->
-            <a href="https://fatihpatir07-debug.github.io/BTU/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #10b981, #059669);">
-                        <i class="fas fa-code"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Bilişim Teknolojileri ve Yazılım</h3>
-                        <p>Bilişim dersleri için hazırlanan, temel bilgisayar bilimleri ve kodlama eğitim materyallerini
-                            içeren platform.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Kodlama</span>
-                            <span class="tech-pill-small">Eğitim</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Felsefe Projesi -->
-            <a href="https://fatihpatirhoca.github.io/felsefe/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #64748b, #475569);">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Düşünce Dünyası (Felsefe)</h3>
-                        <p>Felsefe dersleri için hazırlanan, temel kavramları ve düşünürleri tanıtan interaktif eğitim
-                            materyali.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Felsefe</span>
-                            <span class="tech-pill-small">Eğitim</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Neon Tetris -->
-            <a href="https://fatihpatir.github.io/neontetris/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #6366f1, #a855f7);">
-                        <i class="fas fa-shapes"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Neon Tetris</h3>
-                        <p>Minimalist tasarım ve akıcı oynanış sunan modern bir Tetris deneyimi.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">JS</span>
-                            <span class="tech-pill-small">Neon Style</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Bir Kelime Bir İşlem -->
-            <a href="https://fatihpatir07-debug.github.io/1kelime1islem/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Bir Kelime Bir İşlem</h3>
-                        <p>Zeka ve matematik becerilerini test eden klasik yarışma oyunu.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Algorithm</span>
-                            <span class="tech-pill-small">JS</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Dream Garden Projesi -->
-            <a href="https://fatihpatir007-cloud.github.io/nhdreamgarden/" target="_blank" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #059669, #10b981);">
-                        <i class="fas fa-seedling"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>NH Dream Garden</h3>
-                        <p>Nene Hatun MTAL için hazırlanan, okul bahçesi ve bitki takibi üzerine interaktif bir dijital
-                            deneyim.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Doğa</span>
-                            <span class="tech-pill-small">Web</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- 101 Okey Projesi -->
-            <a href="../okey-101/index.html" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #b45309, #78350f);">
-                        <i class="fas fa-th"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>101 Okey Plus <span class="wip-badge">Beta</span></h3>
-                        <p>Gelişmiş oyun mantığı ve ahşap dokulu şık arayüzü ile 101 Okey oyunu (Geliştirme aşamasında).
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Canvas</span>
-                            <span class="tech-pill-small">Logic</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Sınıf Defterim -->
-            <a href="../sinif-defterim-pwa/index.html" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #0ea5e9, #2563eb);">
-                        <i class="fas fa-book-reader"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Sınıf Defterim</h3>
-                        <p>Öğretmenler için ders takibi ve program yönetimini kolaylaştıran PWA uygulaması.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Education</span>
-                            <span class="tech-pill-small">Offline</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- G&G Parkur -->
-            <a href="../G&G-Parkur/index.html" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #22c55e, #16a34a);">
-                        <i class="fas fa-gamepad"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>G&G Parkur</h3>
-                        <p>Eğlenceli karakterler ve zorlu parkurlarla dolu bir platform oyunu.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Phaser.js</span>
-                            <span class="tech-pill-small">Gaming</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
-
-            <!-- Bir Kelime Bir İşlem -->
-            <a href="../bir-kelime-bir-islem/index.html" class="card-link">
-                <div class="card project-card">
-                    <div class="project-image" style="background: linear-gradient(135deg, #f59e0b, #d97706);">
-                        <i class="fas fa-calculator"></i>
-                    </div>
-                    <div class="project-info">
-                        <h3>Bir Kelime Bir İşlem</h3>
-                        <p>Zeka ve matematik becerilerini test eden klasik yarışma oyunu.</p>
-                        <div class="tech-tags">
-                            <span class="tech-pill-small">Algorithm</span>
-                            <span class="tech-pill-small">JS</span>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <h3 class="category-h">Teknik & Okul</h3>
+        <div class="projects-grid">
+            <div class="project-card glass"><h3>Gitar Akort</h3><p>Akort programı.</p><a href="https://fatihpatir.github.io/akort" class="btn btn-outline">Kullan</a></div>
+            <div class="project-card glass"><h3>Fusion 3D</h3><p>3D Tasarım uygulaması.</p><a href="https://fatihpatir.github.io/fusion" class="btn btn-outline">İncele</a></div>
+            <div class="project-card glass"><h3>11-B Portfolyo</h3><p>Sınıf çalışmaları.</p><a href="https://fatihpatir.github.io/05-06-11B" class="btn btn-outline">Gör</a></div>
+            <div class="project-card glass"><h3>BTU & Grafik</h3><p>Tasarım ve Grafik dersi.</p><a href="https://fatihpatir.github.io/BTU" class="btn btn-outline">BTU</a> <a href="https://fatihpatir.github.io/grafik" class="btn btn-outline">Grafik</a></div>
         </div>
     </main>
-
-    <footer>
-        <div class="container footer-content glass">
-            <p>© 2025 – Fatih Patır | Bilişim Teknolojileri Öğretmeni
-            </p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
-
 </html>

@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,105 +7,46 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-
     <nav class="navbar glass">
-        <div class="logo">
-            <i class="fas fa-terminal"></i> Fatih Patır
-        </div>
-
+        <div class="logo">Fatih Patır</div>
         <ul class="nav-links">
             <li><a href="index.html">Anasayfa</a></li>
-            <li><a href="about.html">Hakkımda</a></li>
-            <li><a href="skills.html">Dersler</a></li>
             <li><a href="projects.html">Projeler</a></li>
             <li><a href="contact.html" class="active">İletişim</a></li>
         </ul>
     </nav>
 
-    <header class="page-header">
-        <div class="container">
-            <h1
-                style="background: linear-gradient(to right, var(--dark), var(--primary)); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">
-                İletişim</h1>
-            <p style="color: var(--secondary); font-size: 1.2rem;">İş birliği ve merak ettikleriniz için buradayım</p>
-        </div>
-    </header>
-
-    <main class="container">
-        <div class="contact-container">
-            <div class="contact-info">
-                <h2 style="margin-bottom: 1.5rem;">İletişim Bilgileri</h2>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-school"></i></div>
-                    <div>
-                        <h4 style="margin-bottom: 0.3rem;">Okul</h4>
-                        <p style="color: var(--secondary);">Korkuteli Nene Hatun Mesleki ve Teknik Anadolu Lisesi</p>
+    <main class="container" style="padding-top: 100px; text-align: center;">
+        <h2 style="color:var(--primary);">Bana Ulaşın</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px;">
+            <div class="glass" style="padding: 30px; border-radius: 20px; text-align: left;">
+                <form action="https://formspree.io/f/fatihpatir07@hotmail.com" method="POST">
+                    <div style="margin-bottom: 15px;">
+                        <label>Adınız</label><br>
+                        <input type="text" name="name" required style="width:100%; padding:10px; border-radius:8px; border:none; margin-top:5px;">
                     </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <h4 style="margin-bottom: 0.3rem;">E-Posta</h4>
-                        <p style="color: var(--secondary);">fatihpatir07@hotmail.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <label>E-posta Adresiniz</label><br>
+                        <input type="email" name="_replyto" required style="width:100%; padding:10px; border-radius:8px; border:none; margin-top:5px;">
                     </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <h4 style="margin-bottom: 0.3rem;">Okul Telefonu</h4>
-                        <p style="color: var(--secondary);">0242 643 31 76</p>
+                    <div style="margin-bottom: 15px;">
+                        <label>Mesajınız</label><br>
+                        <textarea name="message" required style="width:100%; padding:10px; border-radius:8px; border:none; height:100px; margin-top:5px;"></textarea>
                     </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-globe"></i></div>
-                    <div>
-                        <h4 style="margin-bottom: 0.3rem;">Okul Web Sayfası</h4>
-                        <p style="color: var(--secondary);"><a href="https://korkutelinenehatun.meb.k12.tr/"
-                                target="_blank"
-                                style="color: var(--primary); text-decoration: none;">korkutelinenehatun.meb.k12.tr</a>
-                        </p>
-                    </div>
-                </div>
-                <div style="display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.5rem;">
-                    <div style="color: var(--primary); font-size: 1.5rem;"><i class="fas fa-location-dot"></i></div>
-                    <div>
-                        <h4 style="margin-bottom: 0.3rem;">Lokasyon</h4>
-                        <p style="color: var(--secondary);">Korkuteli, Antalya</p>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-primary" style="width:100%;">Mesajı Gönder</button>
+                </form>
             </div>
 
-            <div class="contact-form-area">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label>Adınız Soyadınız</label>
-                        <input type="text" class="form-control" name="name" required placeholder="Fatih Patır">
-                    </div>
-                    <div class="form-group">
-                        <label>E-Posta Adresiniz</label>
-                        <input type="email" class="form-control" name="email" required placeholder="example@mail.com">
-                    </div>
-                    <div class="form-group">
-                        <label>Mesajınız</label>
-                        <textarea class="form-control" name="message" rows="5" required
-                            placeholder="Mesajınızı buraya yazınız..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Gönder</button>
-                </form>
+            <div class="glass" style="padding: 30px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+                <h3 style="margin-bottom: 20px;">Instagram'dan Takip Et</h3>
+                <a href="https://instagram.com/lodfatih" target="_blank" style="font-size: 5rem; color: #E1306C; transition: 0.3s;">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <p style="margin-top: 15px; font-weight: bold;">@lodfatih</p>
             </div>
         </div>
     </main>
-
-    <footer>
-        <div class="container footer-content glass">
-            <p>© 2025 – Fatih Patır | Bilişim Teknolojileri Öğretmeni
-            </p>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
 </body>
-
 </html>
