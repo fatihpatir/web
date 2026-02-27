@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -12,12 +13,23 @@
     <link rel="manifest" href="manifest.json">
     <meta name="theme-color" content="#020617">
 </head>
+
 <body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="loader-content">
+            <span class="code-bracket">&lt;</span>
+            <span id="typewriter"></span>
+            <span class="code-cursor">_</span>
+            <span class="code-bracket">/&gt;</span>
+        </div>
+    </div>
 
     <!-- Navbar -->
     <nav class="navbar glass" id="navbar">
         <a href="#home" class="logo"><i class="fas fa-terminal"></i> Fatih Patır</a>
-        
+
         <ul class="nav-links" id="nav-links">
             <li><a href="#home" class="nav-link active">Anasayfa</a></li>
             <li><a href="#about" class="nav-link">Hakkımda</a></li>
@@ -27,7 +39,8 @@
         </ul>
 
         <div class="nav-controls">
-            <button id="info-btn" class="i-btn"><i class="fas fa-info"></i></button>
+            <button id="theme-btn" class="i-btn" title="Tema Değiştir"><i class="fas fa-moon"></i></button>
+            <button id="info-btn" class="i-btn" title="Bilgi"><i class="fas fa-info"></i></button>
             <button class="hamburger" id="hamburger">
                 <i class="fas fa-bars"></i>
             </button>
@@ -50,7 +63,9 @@
             <div class="hero-image">
                 <div class="avatar-wrapper">
                     <div class="avatar-bg"></div>
-                    <img src="avatar.png" alt="Fatih Patır" class="avatar-main">
+                    <img src="avatar.png" alt="Fatih Patır" class="avatar-main active">
+                    <img src="avatar2.png" alt="Fatih Patır 2" class="avatar-main">
+                    <img src="avatar3.png" alt="Fatih Patır 3" class="avatar-main">
                 </div>
             </div>
         </section>
@@ -59,27 +74,34 @@
         <section id="about" class="container">
             <h2 class="section-title">Hakkımda</h2>
             <div class="section-subtitle">Eğitim Yolculuğum ve Vizyonum</div>
-            
+
             <div class="about-grid">
                 <div class="bio-content">
                     <p>
-                        <strong>Fatih Patır</strong> olarak, 1982 yılında Antalya’nın köklü geçmişine sahip topraklarında dünyaya geldim. 
-                        Teknolojiye olan tutkum, genç yaşlarda bilgisayarların gizemli dünyasını keşfetmemle başladı ve bu tutku zamanla bir hayat amacına dönüştü.
+                        <strong>Fatih Patır</strong> olarak, 1982 yılında Antalya’nın köklü geçmişine sahip
+                        topraklarında dünyaya geldim.
+                        Teknolojiye olan tutkum, genç yaşlarda bilgisayarların gizemli dünyasını keşfetmemle başladı ve
+                        bu tutku zamanla bir hayat amacına dönüştü.
                     </p>
                     <p>
-                        Bilişim dünyasındaki yolculuğuma teknik eğitim temelleriyle başladım. Akademik kariyerimin her adımında, sadece kod yazmayı değil, 
-                        bu sistemlerin nasıl bir eğitim aracına dönüşebileceğini sorguladım. İstanbul'un dinamik yapısından Van'ın zorlu ama öğretici coğrafyasına kadar 
+                        Bilişim dünyasındaki yolculuğuma teknik eğitim temelleriyle başladım. Akademik kariyerimin her
+                        adımında, sadece kod yazmayı değil,
+                        bu sistemlerin nasıl bir eğitim aracına dönüşebileceğini sorguladım. İstanbul'un dinamik
+                        yapısından Van'ın zorlu ama öğretici coğrafyasına kadar
                         Türkiye'nin dört bir yanında eğitim meşalesini taşıdım.
                     </p>
                     <p>
-                        Bugün Korkuteli'nde, <strong>Nene Hatun MTAL</strong> bünyesinde sadece bir öğretmen olarak genç nesillere rehberlik ediyorum. 
+                        Bugün Korkuteli'nde, <strong>Nene Hatun MTAL</strong> bünyesinde sadece bir öğretmen olarak genç
+                        nesillere rehberlik ediyorum.
                         Amacım, her bir öğrencimin dijital dünyada kendi hikayesini yazacak donanıma sahip olmasıdır.
                     </p>
                     <div class="family-box glass">
                         <i class="fas fa-heart"></i>
                         <div>
-                            <strong>Ailem:</strong> Evliyim; hayatımın en kıymetli hazineleri olan <strong>Göktuğ</strong> 
-                            ve <strong>Gökçe</strong> adında iki çocuk babasıyım. Ailem, eğitim yolculuğumdaki en büyük motivasyon kaynağımdır.
+                            <strong>Ailem:</strong> Evliyim; hayatımın en kıymetli hazineleri olan
+                            <strong>Göktuğ</strong>
+                            ve <strong>Gökçe</strong> adında iki çocuk babasıyım. Ailem, eğitim yolculuğumdaki en büyük
+                            motivasyon kaynağımdır.
                         </div>
                     </div>
                 </div>
@@ -150,22 +172,26 @@
                 <div class="card glass">
                     <div class="card-icon"><i class="fas fa-code"></i></div>
                     <h3>Web Tasarımı ve Programlama</h3>
-                    <p>HTML5, CSS3 ve JavaScript temellerinden başlayarak, responsive tasarım, modern UI/UX prensipleri ve etkileşimli web uygulamaları geliştirme.</p>
+                    <p>HTML5, CSS3 ve JavaScript temellerinden başlayarak, responsive tasarım, modern UI/UX prensipleri
+                        ve etkileşimli web uygulamaları geliştirme.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i class="fas fa-cube"></i></div>
                     <h3>Nesne Tabanlı Programlama</h3>
-                    <p>C# ve Python ile OOP mantığı. Sınıflar, nesneler, kalıtım ve çok biçimlilik gibi kavramlar ve masaüstü uygulama geliştirmeleri.</p>
+                    <p>C# ve Python ile OOP mantığı. Sınıflar, nesneler, kalıtım ve çok biçimlilik gibi kavramlar ve
+                        masaüstü uygulama geliştirmeleri.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i class="fas fa-network-wired"></i></div>
                     <h3>Ağ Sistemleri</h3>
-                    <p>Teknik çizim standartları ve bilgisayar ağlarının mimarisi. IP yapılandırması, yönlendirme, ağ güvenliği.</p>
+                    <p>Teknik çizim standartları ve bilgisayar ağlarının mimarisi. IP yapılandırması, yönlendirme, ağ
+                        güvenliği.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i class="fas fa-microchip"></i></div>
                     <h3>Robotik ve Elektronik Sistemler</h3>
-                    <p>Arduino ve benzeri mikrodenetleyiciler kullanarak devre tasarımı, sensör entegrasyonu ve otonom sistem kontrolü.</p>
+                    <p>Arduino ve benzeri mikrodenetleyiciler kullanarak devre tasarımı, sensör entegrasyonu ve otonom
+                        sistem kontrolü.</p>
                 </div>
                 <div class="card glass">
                     <div class="card-icon"><i class="fas fa-database"></i></div>
@@ -175,7 +201,8 @@
                 <div class="card glass">
                     <div class="card-icon"><i class="fas fa-mobile-alt"></i></div>
                     <h3>Gelişmiş Yazılım Teknolojileri</h3>
-                    <p>Mobil uygulama geliştirme (Flutter/React Native), Yapay Zeka temelleri ve Bulut Bilişim kavramları.</p>
+                    <p>Mobil uygulama geliştirme (Flutter/React Native), Yapay Zeka temelleri ve Bulut Bilişim
+                        kavramları.</p>
                 </div>
             </div>
 
@@ -206,39 +233,45 @@
                     <i class="fas fa-circle-notch main-icon"></i>
                     <h3>Neon Vortex</h3>
                     <p>Halka tabanlı refleks oyunu.</p>
-                    <a href="https://fatihpatir.github.io/ring" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Oyna</a>
+                    <a href="https://fatihpatir.github.io/ring" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Oyna</a>
                 </div>
                 <div class="project-card glass">
                     <span class="new-tag">YENİ</span>
                     <i class="fas fa-cubes main-icon"></i>
                     <h3>Block Breaker</h3>
                     <p>Modern blok kırma deneyimi.</p>
-                    <a href="https://fatihpatir.github.io/block" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Başlat</a>
+                    <a href="https://fatihpatir.github.io/block" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Başlat</a>
                 </div>
                 <div class="project-card glass">
                     <span class="new-tag">YENİ</span>
                     <i class="fas fa-worm main-icon"></i>
                     <h3>Neon Snake</h3>
                     <p>Hızlı ve neon yılan oyunu.</p>
-                    <a href="https://fatihpatir.github.io/snake" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Oyna</a>
+                    <a href="https://fatihpatir.github.io/snake" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Oyna</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-microchip main-icon"></i>
                     <h3>Codeman</h3>
                     <p>Anakart üzerinde parkur oyunu.</p>
-                    <a href="https://fatihpatir.github.io/codeman" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Aç</a>
+                    <a href="https://fatihpatir.github.io/codeman" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Aç</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-th-large main-icon"></i>
                     <h3>Neon Tetris</h3>
                     <p>Modern tetris deneyimi.</p>
-                    <a href="https://fatihpatir.github.io/neontetris" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Oyna</a>
+                    <a href="https://fatihpatir.github.io/neontetris" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Oyna</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-running main-icon"></i>
                     <h3>Parkur</h3>
                     <p>Hızlı parkur oyunu.</p>
-                    <a href="https://fatihpatir.github.io/parkur" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Başla</a>
+                    <a href="https://fatihpatir.github.io/parkur" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Başla</a>
                 </div>
             </div>
 
@@ -248,25 +281,29 @@
                     <i class="fas fa-chalkboard-teacher main-icon"></i>
                     <h3>Hocam</h3>
                     <p>Öğretmen uygulaması.</p>
-                    <a href="https://fatihpatir.github.io/hocam" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Git</a>
+                    <a href="https://fatihpatir.github.io/hocam" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Git</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-atom main-icon"></i>
                     <h3>ElementGO</h3>
                     <p>Fen Bilgisi Element çalışması.</p>
-                    <a href="https://fatihpatir.github.io/elementGO" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Öğren</a>
+                    <a href="https://fatihpatir.github.io/elementGO" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Öğren</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-clock main-icon"></i>
                     <h3>Geri Sayım</h3>
                     <p>Etkinlik sayacı.</p>
-                    <a href="https://fatihpatir.github.io/gerisay" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Kur</a>
+                    <a href="https://fatihpatir.github.io/gerisay" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Kur</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-file-alt main-icon"></i>
                     <h3>Mini Test</h3>
                     <p>Test denemesi.</p>
-                    <a href="https://fatihpatir.github.io/minitest" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Çöz</a>
+                    <a href="https://fatihpatir.github.io/minitest" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Çöz</a>
                 </div>
             </div>
 
@@ -276,30 +313,43 @@
                     <i class="fas fa-guitar main-icon"></i>
                     <h3>Gitar Akort</h3>
                     <p>Akort programı.</p>
-                    <a href="https://fatihpatir.github.io/akort" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Kullan</a>
+                    <a href="https://fatihpatir.github.io/akort" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Kullan</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-cube main-icon"></i>
                     <h3>Fusion 3D</h3>
                     <p>3D Tasarım uygulaması.</p>
-                    <a href="https://fatihpatir.github.io/fusion" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">İncele</a>
+                    <a href="https://fatihpatir.github.io/fusion" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">İncele</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-users main-icon"></i>
                     <h3>11-B Portfolyo</h3>
                     <p>Sınıf çalışmaları.</p>
-                    <a href="https://fatihpatir.github.io/05-06-11B" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Gör</a>
+                    <a href="https://fatihpatir.github.io/05-06-11B" target="_blank" class="btn btn-outline"
+                        style="text-align: center; padding: 0.5rem 1rem;">Gör</a>
                 </div>
                 <div class="project-card glass">
                     <i class="fas fa-palette main-icon"></i>
                     <h3>BTU & Grafik</h3>
                     <p>Tasarım ve Grafik dersi çalışmaları.</p>
                     <div style="display:flex; gap:10px; justify-content: center;">
-                        <a href="https://fatihpatir.github.io/BTU" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; flex:1; text-align: center;">BTU</a> 
-                        <a href="https://fatihpatir.github.io/grafik" target="_blank" class="btn btn-outline" style="padding: 0.5rem 1rem; flex:1; text-align: center;">Grafik</a>
+                        <a href="https://fatihpatir.github.io/BTU" target="_blank" class="btn btn-outline"
+                            style="padding: 0.5rem 1rem; flex:1; text-align: center;">BTU</a>
+                        <a href="https://fatihpatir.github.io/grafik" target="_blank" class="btn btn-outline"
+                            style="padding: 0.5rem 1rem; flex:1; text-align: center;">Grafik</a>
                     </div>
                 </div>
-            </div>
+                <h3 class="category-h"><i class="fab fa-github"></i> GitHub Açık Kaynak Projeleri</h3>
+                <p style="text-align: center; color: #94a3b8; font-size: 0.95rem; margin-bottom: 20px;">Github'daki son
+                    açık projelerim otomatik olarak çekilmektedir.</p>
+                <div id="github-projects-grid" class="projects-grid">
+                    <!-- Github Repos Will Load Here -->
+                    <div style="text-align: center; width: 100%; color: var(--secondary);"><i
+                            class="fas fa-spinner fa-spin"></i> Projeler yükleniyor...</div>
+                </div>
+
         </section>
 
         <!-- CONTACT SECTION -->
@@ -310,7 +360,7 @@
             <div class="contact-container">
                 <div class="contact-box glass">
                     <h3><i class="fas fa-school"></i> Okul Bilgileri</h3>
-                    
+
                     <div class="info-item">
                         <i class="fas fa-building"></i>
                         <span>Korkuteli Nene Hatun Kız MTAL</span>
@@ -335,7 +385,7 @@
 
                 <div class="contact-box glass social-box">
                     <h3>Sosyal Medya & E-posta</h3>
-                    
+
                     <a href="https://instagram.com/lodfatih" target="_blank" class="social-icon">
                         <i class="fab fa-instagram"></i>
                     </a>
@@ -343,7 +393,8 @@
 
                     <div class="info-item" style="margin-bottom: 0.5rem;">
                         <i class="fas fa-at"></i>
-                        <a href="mailto:fatihpatir07@hotmail.com" style="font-weight: bold;">fatihpatir07@hotmail.com</a>
+                        <a href="mailto:fatihpatir07@hotmail.com"
+                            style="font-weight: bold;">fatihpatir07@hotmail.com</a>
                     </div>
                     <p style="font-size: 0.9rem; color: #94a3b8;">(E-posta göndermek için tıklayın)</p>
                 </div>
@@ -357,7 +408,8 @@
             <h3>Uygulama Bilgisi</h3>
             <p>Nene Hatun MTAL Bilişim Teknolojileri Öğretmeni</p>
             <p style="font-weight: bold; font-size: 1.2rem; color: var(--light); margin-top: 10px;">Fatih PATIR</p>
-            <p style="font-size: 0.9rem; margin-top: 15px;">Bu site mobil uyumlu (PWA) olarak tasarlanmıştır. Telefonunuzun ana ekranına ekleyebilirsiniz.</p>
+            <p style="font-size: 0.9rem; margin-top: 15px;">Bu site mobil uyumlu (PWA) olarak tasarlanmıştır.
+                Telefonunuzun ana ekranına ekleyebilirsiniz.</p>
             <button id="close-popup" class="btn btn-primary">Kapat</button>
         </div>
     </div>
@@ -372,4 +424,5 @@
     <!-- JS -->
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,14 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // DOM Elements
+    // ---- Preloader Logic ----
+    const preloader = document.getElementById('preloader');
+    const typewriterElement = document.getElementById('typewriter');
+    const textToType = 'Fatih Patır';
+    let typeIndex = 0;
+
+    function typeWriter() {
+        if (typeIndex < textToType.length) {
+            typewriterElement.textContent += textToType.charAt(typeIndex);
+            typeIndex++;
+            setTimeout(typeWriter, 120);
+        } else {
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+            }, 1000); // 1 saniye bekle ve kaybol
+        }
+    }
+
+    // Typing efektini başlat
+    if (typewriterElement) {
+        setTimeout(typeWriter, 500);
+    } else if (preloader) {
+        preloader.classList.add('fade-out');
+    }
+
+    // ---- Avatar Slider Logic ----
+    const avatars = document.querySelectorAll('.avatar-main');
+    let currentAvatarIndex = 0;
+
+    if (avatars.length > 1) {
+        setInterval(() => {
+            avatars[currentAvatarIndex].classList.remove('active');
+            currentAvatarIndex = (currentAvatarIndex + 1) % avatars.length;
+            avatars[currentAvatarIndex].classList.add('active');
+        }, 4000); // 4 saniyede bir değiştir
+    }
+
+
+    // ---- DOM Elements ----
     const navbar = document.getElementById('navbar');
     const hamburger = document.getElementById('hamburger');
     const navLinksContainer = document.getElementById('nav-links');
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section');
     const infoBtn = document.getElementById('info-btn');
+    const themeBtn = document.getElementById('theme-btn');
     const closeBtn = document.getElementById('close-popup');
     const popup = document.getElementById('info-popup');
     const yearSpan = document.getElementById('year');
+
+    // ---- Theme Toggle (Dark/Light Mode) ----
+    if (themeBtn) {
+        // Kontrol et eğer localStorage'da kayıtlı tema varsa
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme === 'light') {
+            document.body.classList.add('light-mode');
+            themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        }
+
+        themeBtn.addEventListener('click', () => {
+            document.body.classList.toggle('light-mode');
+            const isLight = document.body.classList.contains('light-mode');
+
+            if (isLight) {
+                themeBtn.innerHTML = '<i class="fas fa-sun"></i>';
+                localStorage.setItem('theme', 'light');
+            } else {
+                themeBtn.innerHTML = '<i class="fas fa-moon"></i>';
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+    }
 
     // Set current year in footer
     if (yearSpan) {
