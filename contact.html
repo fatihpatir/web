@@ -6,47 +6,113 @@
     <title>İletişim | Fatih Patır</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 50px;
+        }
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+        }
+        .info-box { margin-bottom: 25px; }
+        .info-item { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+        .info-item i { color: var(--primary); font-size: 1.2rem; width: 25px; text-align: center; }
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(255,255,255,0.05);
+            color: white;
+        }
+    </style>
 </head>
 <body>
+
     <nav class="navbar glass">
-        <div class="logo">Fatih Patır</div>
+        <div class="logo"><i class="fas fa-terminal"></i> Fatih Patır</div>
         <ul class="nav-links">
             <li><a href="index.html">Anasayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
             <li><a href="projects.html">Projeler</a></li>
             <li><a href="contact.html" class="active">İletişim</a></li>
         </ul>
     </nav>
 
-    <main class="container" style="padding-top: 100px; text-align: center;">
-        <h2 style="color:var(--primary);">Bana Ulaşın</h2>
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px;">
-            <div class="glass" style="padding: 30px; border-radius: 20px; text-align: left;">
+    <main class="container" style="padding-top: 120px; padding-bottom: 50px;">
+        <h2 style="text-align: center; font-size: 2.5rem; color: var(--primary);">Bana Ulaşın</h2>
+        <p style="text-align: center; opacity: 0.8;">İster aşağıdaki formu kullanın, ister sosyal medyadan yazın.</p>
+
+        <div class="contact-container">
+            <div class="glass" style="padding: 30px; border-radius: 20px;">
+                <h3 style="margin-bottom: 20px;"><i class="fas fa-paper-plane"></i> Mesaj Gönder</h3>
                 <form action="https://formspree.io/f/fatihpatir07@hotmail.com" method="POST">
                     <div style="margin-bottom: 15px;">
-                        <label>Adınız</label><br>
-                        <input type="text" name="name" required style="width:100%; padding:10px; border-radius:8px; border:none; margin-top:5px;">
+                        <label>Adınız Soyadınız</label>
+                        <input type="text" name="name" placeholder="Adınızı yazın..." required>
                     </div>
                     <div style="margin-bottom: 15px;">
-                        <label>E-posta Adresiniz</label><br>
-                        <input type="email" name="_replyto" required style="width:100%; padding:10px; border-radius:8px; border:none; margin-top:5px;">
+                        <label>E-posta Adresiniz</label>
+                        <input type="email" name="_replyto" placeholder="Size ulaşabilmem için..." required>
                     </div>
-                    <div style="margin-bottom: 15px;">
-                        <label>Mesajınız</label><br>
-                        <textarea name="message" required style="width:100%; padding:10px; border-radius:8px; border:none; height:100px; margin-top:5px;"></textarea>
+                    <div style="margin-bottom: 20px;">
+                        <label>Mesajınız</label>
+                        <textarea name="message" rows="5" placeholder="Mesajınızı buraya bırakın..." required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary" style="width:100%;">Mesajı Gönder</button>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Gönder</button>
                 </form>
             </div>
 
-            <div class="glass" style="padding: 30px; border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                <h3 style="margin-bottom: 20px;">Instagram'dan Takip Et</h3>
-                <a href="https://instagram.com/lodfatih" target="_blank" style="font-size: 5rem; color: #E1306C; transition: 0.3s;">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <p style="margin-top: 15px; font-weight: bold;">@lodfatih</p>
+            <div class="glass" style="padding: 30px; border-radius: 20px;">
+                
+                <div style="text-align: center; margin-bottom: 40px; padding-bottom: 30px; border-bottom: 1px solid rgba(255,255,255,0.1);">
+                    <h3 style="margin-bottom: 15px;">Instagram</h3>
+                    <a href="https://instagram.com/lodfatih" target="_blank" style="font-size: 4rem; color: #E1306C;">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <p style="font-weight: bold; margin-top: 10px;">@lodfatih</p>
+                </div>
+
+                <div class="info-box">
+                    <h3 style="margin-bottom: 20px;"><i class="fas fa-school"></i> Okul Bilgileri</h3>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-building"></i>
+                        <span>Korkuteli Nene Hatun Kız MTAL</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Korkuteli / Antalya</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <span>0242 643 31 76</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>971696@meb.k12.tr</span>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fas fa-globe"></i>
+                        <a href="http://korkutelinenehatun.meb.k12.tr" target="_blank" style="color: inherit; text-decoration: none;">korkutelinenehatun.meb.k12.tr</a>
+                    </div>
+                </div>
             </div>
         </div>
     </main>
+
+    <footer>
+        <div class="container footer-content glass">
+            <p>© 2026 – Fatih Patır | Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
 </body>
 </html>
