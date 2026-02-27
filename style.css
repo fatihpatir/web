@@ -1,79 +1,46 @@
-/* Önceki stillerin tamamı geçerli, üzerine bunları ekle veya değiştir */
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
     --primary: #6366f1;
-    --primary-dark: #4338ca;
-    --accent: #f59e0b;
     --dark: #020617;
     --light: #f8fafc;
-    --white: #ffffff;
     --glass: rgba(2, 6, 23, 0.7);
     --glass-border: rgba(255, 255, 255, 0.1);
-    --radius: 2rem;
-    --transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Temel ayarlar aynı... */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Outfit', sans-serif; background-color: var(--dark); color: var(--light); overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+.glass { background: var(--glass); backdrop-filter: blur(12px); border: 1px solid var(--glass-border); }
 
-/* Info Butonu Stili */
-.info-btn {
-    background: var(--primary);
-    color: white;
-    border: none;
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    cursor: pointer;
-    font-weight: bold;
-    font-family: serif;
-    font-style: italic;
-}
+/* Navbar */
+.navbar { position: fixed; top: 1rem; left: 50%; transform: translateX(-50%); width: 90%; max-width: 1100px; z-index: 1000; padding: 0.7rem 2rem; border-radius: 50px; display: flex; justify-content: space-between; align-items: center; }
+.logo { cursor: pointer; font-size: 1.3rem; font-weight: 800; color: var(--primary); }
+.nav-links { display: flex; gap: 1rem; list-style: none; }
+.nav-links a { color: white; text-decoration: none; padding: 0.5rem 1rem; border-radius: 50px; }
+.nav-links a.active { background: var(--primary); }
 
-/* Popup Stili */
-.popup {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.8);
-    z-index: 2000;
-    justify-content: center;
-    align-items: center;
-}
+/* Hero Section */
+.hero { min-height: 100vh; display: flex; align-items: center; gap: 2rem; padding-top: 80px; }
+.hero-text { flex: 1; }
+.hero-text h1 { font-size: 4rem; line-height: 1.1; }
+.avatar-wrapper { width: 350px; height: 350px; position: relative; }
+.avatar-main { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; border: 4px solid var(--primary); position: relative; z-index: 2; }
+.avatar-bg { position: absolute; width: 100%; height: 100%; background: var(--primary); border-radius: 50%; opacity: 0.2; transform: scale(1.1); }
 
-.popup-content {
-    padding: 2rem;
-    border-radius: var(--radius);
-    text-align: center;
-    border: 1px solid var(--glass-border);
-    max-width: 300px;
-}
+/* PWA i Button & Popup */
+.i-btn { background: var(--primary); color: white; border: none; width: 30px; height: 30px; border-radius: 50%; cursor: pointer; margin-left: 10px; }
+.popup-overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; justify-content: center; align-items: center; }
+.popup-card { padding: 2rem; border-radius: 2rem; text-align: center; }
 
-/* MOBİL MENÜ FİX */
+/* Mobile Fix */
 @media (max-width: 768px) {
-    .navbar { width: 95%; padding: 0.5rem 1.5rem; }
-    .logo { z-index: 1100; cursor: pointer; }
-    
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: fixed;
-        top: 0; left: 0; right: 0; bottom: 0;
-        background: var(--dark);
-        padding: 100px 2rem;
-        gap: 1rem;
-        z-index: 1000;
-    }
-
-    .nav-links.active { display: flex !important; }
-    
-    .nav-links a {
-        background: var(--glass-light);
-        padding: 1rem;
-        border-radius: 1rem;
-    }
-
-    .hero { flex-direction: column-reverse; padding-top: 120px; text-align: center; }
+    .hero { flex-direction: column-reverse; text-align: center; padding-top: 100px; }
+    .avatar-wrapper { width: 220px; height: 220px; }
     .hero-text h1 { font-size: 2.5rem; }
+    .nav-links {
+        display: none; position: absolute; top: 70px; left: 0; width: 100%;
+        flex-direction: column; background: var(--dark); padding: 1rem; border-radius: 20px; border: 1px solid var(--glass-border);
+    }
+    .nav-links.active { display: flex; }
 }

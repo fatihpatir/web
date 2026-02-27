@@ -2,8 +2,8 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fatih Patır | Kişisel Portfolyo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Fatih Patır | Bilişim Teknolojileri Öğretmeni</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="manifest" href="manifest.json">
@@ -11,50 +11,49 @@
 </head>
 <body>
     <nav class="navbar glass">
-        <div class="logo">
-            <i class="fas fa-terminal"></i>
-            <span>Fatih Patır</span>
-        </div>
-        <div class="nav-links">
-            <a href="index.html" class="active">Ana Sayfa</a>
-            <a href="about.html">Hakkımda</a>
-            <a href="skills.html">Yetenekler</a>
-            <a href="projects.html">Projeler</a>
-            <a href="contact.html">İletişim</a>
-        </div>
-        <button id="info-btn" class="info-btn">i</button>
+        <div class="logo"><i class="fas fa-terminal"></i> Fatih Patır</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Anasayfa</a></li>
+            <li><a href="about.html">Hakkımda</a></li>
+            <li><a href="skills.html">Dersler</a></li>
+            <li><a href="projects.html">Projeler</a></li>
+            <li><a href="contact.html">İletişim</a></li>
+        </ul>
+        <button id="info-btn" class="i-btn">i</button>
     </nav>
 
-    <section class="hero container">
-        <div class="hero-text">
-            <span class="title">Bilişim Teknolojileri Öğretmeni</span>
-            <h1>Geleceği <br>Kodluyoruz</h1>
-            <p class="motto">17 yıllık tecrübe ile Korkuteli Nene Hatun Kız MTAL'de teknoloji ve eğitimi birleştiriyoruz.</p>
-            <div class="btn-group">
-                <a href="projects.html" class="btn btn-primary">Projeleri Gör</a>
-                <a href="contact.html" class="btn btn-outline">İletişime Geç</a>
+    <main class="container">
+        <section class="hero">
+            <div class="hero-text">
+                <span class="title">Bilişim Teknolojileri Öğretmeni</span>
+                <h1>Fatih <br>Patır</h1>
+                <div class="motto">“Üreten, düşünen ve kodlayan nesiller için”</div>
+                <div class="btn-group">
+                    <a href="projects.html" class="btn btn-primary">Projelerimi Gör</a>
+                    <a href="contact.html" class="btn btn-outline">İletişim</a>
+                </div>
             </div>
-        </div>
-        <div class="hero-image">
-            <div class="avatar-wrapper">
-                <div class="avatar-bg"></div>
-                <img src="avatar.png" alt="Fatih Patır" class="avatar-main">
+            <div class="hero-image">
+                <div class="avatar-wrapper">
+                    <div class="avatar-bg"></div>
+                    <img src="avatar.png" alt="Fatih Patır" class="avatar-main">
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <div id="info-popup" class="popup">
-        <div class="popup-content glass">
+    <div id="info-popup" class="popup-overlay">
+        <div class="popup-card glass">
             <h3>Uygulama Bilgisi</h3>
-            <p>Fatih Patır Kişisel PWA Uygulaması</p>
-            <p>Nene Hatun MTAL Bilişim Teknolojileri</p>
-            <button id="close-popup">Kapat</button>
+            <p>Nene Hatun MTAL Bilişim Teknolojileri Öğretmeni</p>
+            <p>Fatih PATIR</p>
+            <button id="close-popup" class="btn btn-primary">Kapat</button>
         </div>
     </div>
 
-    <footer class="container">
-        <div class="footer-content">
-            <p>&copy; 2026 Fatih Patır - Nene Hatun MTAL Korkuteli/Antalya Bilişim Teknolojileri Öğretmeni</p>
+    <footer>
+        <div class="container footer-content glass">
+            <p>© 2026 – Fatih Patır | Nene Hatun MTAL Korkuteli/Antalya Bilişim Teknolojileri Öğretmeni</p>
         </div>
     </footer>
     <script src="script.js"></script>
