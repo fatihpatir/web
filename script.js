@@ -45,11 +45,74 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('section');
     const infoBtn = document.getElementById('info-btn');
     const themeBtn = document.getElementById('theme-btn');
+
+    // Theme Palette Elements
+    const themePaletteBtn = document.getElementById('theme-palette-btn');
+    const themePalettePopup = document.getElementById('theme-palette-popup');
+    const closeThemePalette = document.getElementById('close-theme-palette');
+    const themeSelectBtns = document.querySelectorAll('.theme-select-btn');
+
     const closeBtn = document.getElementById('close-popup');
     const popup = document.getElementById('info-popup');
     const yearSpan = document.getElementById('year');
 
-    // ---- Theme Toggle (Dark/Light Mode) ----
+    // ---- Layout Theme System Engine ---- //
+    function applyLayoutTheme(theme) {
+        // Eski temaları temizle
+        document.body.classList.remove('theme-retro', 'theme-cyberpunk', 'theme-pastel');
+
+        // Geçişi anlık durdur (Flaşlama olmasın diye)
+        document.body.style.transition = 'none';
+
+        if (theme !== 'default') {
+            document.body.classList.add(`theme-${theme}`);
+        }
+
+        // Geçişleri geri yükle
+        setTimeout(() => {
+            document.body.style.transition = 'background-color 0.5s ease, color 0.5s ease';
+        }, 50);
+    }
+
+    // Kayıtlı olan temanın yüklenmesi
+    const savedLayout = localStorage.getItem('layoutTheme') || 'default';
+    applyLayoutTheme(savedLayout);
+
+    // Theme Palette Popup controls
+    if (themePaletteBtn) {
+        themePaletteBtn.addEventListener('click', () => {
+            themePalettePopup.style.display = 'flex';
+            setTimeout(() => {
+                themePalettePopup.querySelector('.popup-card').style.transform = 'scale(1)';
+            }, 10);
+        });
+    }
+
+    if (closeThemePalette) {
+        closeThemePalette.addEventListener('click', () => {
+            themePalettePopup.style.display = 'none';
+        });
+    }
+
+    if (themePalettePopup) {
+        themePalettePopup.addEventListener('click', (e) => {
+            if (e.target === themePalettePopup) {
+                themePalettePopup.style.display = 'none';
+            }
+        });
+    }
+
+    // Butonlardan tema seçimi
+    themeSelectBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = btn.getAttribute('data-theme');
+            applyLayoutTheme(theme);
+            localStorage.setItem('layoutTheme', theme);
+            themePalettePopup.style.display = 'none';
+        });
+    });
+
+    // ---- Theme Toggle (Dark/Light Mode) Defaults ----
     if (themeBtn) {
         // Kontrol et eğer localStorage'da kayıtlı tema varsa
         const savedTheme = localStorage.getItem('theme');

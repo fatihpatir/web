@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Orbitron:wght@400;700;900&family=Nunito:wght@400;600;800&display=swap');
 
 :root {
     --primary: #6366f1;
@@ -32,6 +32,14 @@ body.light-mode {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    -webkit-user-select: none;
+    /* Safari */
+    -ms-user-select: none;
+    /* IE 10 and older */
+    user-select: none;
+    /* Standard */
+    -webkit-tap-highlight-color: transparent;
+    /* Mobildeki mavi tıklama işaretini kaldırır */
 }
 
 html {
@@ -630,6 +638,10 @@ section {
     color: inherit;
     text-decoration: none;
     transition: color 0.3s;
+    -webkit-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    /* İletişim bilgilerinin yine de kopyalanabilmesi için */
 }
 
 .info-item a:hover {
@@ -792,4 +804,355 @@ footer {
     .grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ========================================= */
+/* THEME: RETRO 90s TERMINAL                 */
+/* ========================================= */
+body.theme-retro {
+    font-family: 'Courier New', Courier, monospace;
+    background: #000;
+    --primary: #0f0;
+    --primary-glow: rgba(0, 255, 0, 0.5);
+    --secondary: #fff;
+    --light: #0f0;
+    --dark: #000;
+    --darker: #000;
+    --glass-bg: #000;
+    --glass-border: #0f0;
+    --glass-shadow: none;
+    --text-color: #0f0;
+    --text-muted: #0a0;
+    --text-motto: #0c0;
+}
+
+body.theme-retro.light-mode {
+    background: #fff !important;
+    --primary: #080;
+    --primary-glow: rgba(0, 128, 0, 0.3);
+    --secondary: #000;
+    --light: #080;
+    --dark: #fff;
+    --darker: #fff;
+    --glass-bg: #fff;
+    --glass-border: #080;
+    --text-color: #050;
+    --text-muted: #080;
+    --text-motto: #060;
+}
+
+body.theme-retro::before {
+    display: none;
+}
+
+body.theme-retro * {
+    text-shadow: none !important;
+    border-radius: 0 !important;
+}
+
+body.theme-retro .glass {
+    backdrop-filter: none;
+    background: transparent;
+    border: 2px solid #0f0;
+}
+
+body.theme-retro .section-title {
+    background: none;
+    color: #0f0;
+    -webkit-text-fill-color: #0f0;
+    text-transform: uppercase;
+    text-decoration: underline;
+}
+
+body.theme-retro .btn {
+    border: 2px solid #0f0;
+    background: #000;
+    color: #0f0;
+    text-transform: uppercase;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body.theme-retro .btn-outline {
+    background: #000;
+}
+
+body.theme-retro .btn:hover {
+    background: #0f0;
+    color: #000;
+    box-shadow: none;
+}
+
+body.theme-retro .avatar-main {
+    border: 2px dashed #0f0;
+    filter: sepia(100%) hue-rotate(70deg) saturate(300%) brightness(1.2);
+}
+
+body.theme-retro.light-mode .avatar-main {
+    border: 2px dashed #080;
+    filter: sepia(100%) hue-rotate(70deg) saturate(300%);
+}
+
+body.theme-retro .avatar-bg {
+    display: none;
+}
+
+body.theme-retro .navbar {
+    border: 2px solid #0f0;
+    background: #000;
+    top: 5px;
+    width: 98%;
+}
+
+body.theme-retro .navbar.scrolled {
+    background: #000;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px dashed #0f0;
+}
+
+body.theme-retro .tech-pill {
+    background: #000;
+    border: 1px dashed #0f0;
+    color: #0f0;
+}
+
+body.theme-retro .tech-pill:hover {
+    background: #0f0;
+    color: #000;
+}
+
+body.theme-retro .timeline-item::before {
+    background: #000;
+    border: 2px solid #0f0;
+    box-shadow: none;
+}
+
+body.theme-retro .timeline::before {
+    background: #0f0;
+}
+
+body.theme-retro .social-icon {
+    color: #0f0 !important;
+}
+
+/* ========================================= */
+/* THEME: CYBERPUNK 2077                     */
+/* ========================================= */
+body.theme-cyberpunk {
+    font-family: 'Orbitron', sans-serif;
+    background: #0d0221;
+    --primary: #ff003c;
+    --primary-glow: rgba(255, 0, 60, 0.8);
+    --secondary: #00f0ff;
+    --light: #fcee0a;
+    --dark: #000;
+    --darker: #0d0221;
+    --glass-bg: rgba(13, 2, 33, 0.9);
+    --glass-border: #ff003c;
+    --glass-shadow: 4px 4px 0px #00f0ff;
+    --text-color: #f8fafc;
+    --text-muted: #00f0ff;
+    --text-motto: #fcee0a;
+}
+
+body.theme-cyberpunk.light-mode {
+    background: #fcee0a !important;
+    --primary: #ff003c;
+    --primary-glow: rgba(255, 0, 60, 0.5);
+    --secondary: #000;
+    --light: #ff003c;
+    --dark: #fcee0a;
+    --darker: #fcee0a;
+    --glass-bg: rgba(255, 255, 255, 0.4);
+    --glass-border: #000;
+    --glass-shadow: 4px 4px 0px #000;
+    --text-color: #000;
+    --text-muted: #333;
+    --text-motto: #ff003c;
+}
+
+body.theme-cyberpunk::before {
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 240, 255, 0.05) 2px, rgba(0, 240, 255, 0.05) 4px);
+    z-index: 999;
+    pointer-events: none;
+}
+
+body.theme-cyberpunk.light-mode::before {
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.05) 2px, rgba(0, 0, 0, 0.05) 4px);
+}
+
+body.theme-cyberpunk * {
+    border-radius: 0 !important;
+}
+
+body.theme-cyberpunk .glass {
+    backdrop-filter: none;
+    border: 2px solid var(--primary);
+    clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+    box-shadow: none;
+    border-bottom: 4px solid var(--secondary);
+    border-right: 4px solid var(--secondary);
+}
+
+body.theme-cyberpunk .card:hover,
+body.theme-cyberpunk .project-card:hover {
+    transform: translate(-5px, -5px);
+    box-shadow: 10px 10px 0px rgba(0, 240, 255, 0.3);
+}
+
+body.theme-cyberpunk .btn {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body.theme-cyberpunk .btn-outline {
+    background: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+}
+
+body.theme-cyberpunk .btn:hover {
+    background: var(--light);
+    color: #000;
+    box-shadow: 0 0 20px var(--light);
+}
+
+body.theme-cyberpunk .section-title {
+    background: none;
+    color: var(--light);
+    -webkit-text-fill-color: var(--light);
+    text-shadow: 3px 3px var(--primary);
+    letter-spacing: 5px;
+}
+
+body.theme-cyberpunk .avatar-main {
+    filter: contrast(130%) saturate(150%) hue-rotate(10deg);
+    border: 3px solid var(--secondary);
+    clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+}
+
+body.theme-cyberpunk .avatar-bg {
+    background: conic-gradient(from 0deg, var(--primary), var(--secondary), var(--light), var(--primary));
+    opacity: 0.8;
+}
+
+body.theme-cyberpunk .timeline::before {
+    background: var(--primary);
+}
+
+body.theme-cyberpunk .timeline-item::before {
+    background: var(--light);
+    box-shadow: 0 0 15px var(--light);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+}
+
+/* ========================================= */
+/* THEME: SOFT PASTEL                        */
+/* ========================================= */
+body.theme-pastel {
+    font-family: 'Nunito', sans-serif;
+    background: #0f172a !important;
+    --primary: #38bdf8;
+    --primary-glow: rgba(56, 189, 248, 0.3);
+    --secondary: #818cf8;
+    --light: #f8fafc;
+    --dark: #0f172a;
+    --darker: #020617;
+    --glass-bg: rgba(15, 23, 42, 0.85);
+    --glass-border: #38bdf8;
+    --glass-shadow: 0 10px 40px rgba(56, 189, 248, 0.1);
+    --text-color: #f8fafc;
+    --text-muted: #94a3b8;
+    --text-motto: #38bdf8;
+}
+
+body.theme-pastel.light-mode {
+    background: #f0f9ff !important;
+    --primary: #0ea5e9;
+    --primary-glow: rgba(14, 165, 233, 0.3);
+    --secondary: #6366f1;
+    --light: #ffffff;
+    --dark: #ffffff;
+    --darker: #f0f9ff;
+    --glass-bg: rgba(255, 255, 255, 0.85);
+    --glass-border: #bae6fd;
+    --glass-shadow: 0 10px 40px rgba(14, 165, 233, 0.1);
+    --text-color: #0f172a;
+    --text-muted: #475569;
+    --text-motto: #0ea5e9;
+}
+
+body.theme-pastel::before {
+    background: radial-gradient(circle at 20% 20%, rgba(56, 189, 248, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(129, 140, 248, 0.05) 0%, transparent 40%);
+}
+
+body.theme-pastel.light-mode::before {
+    background: radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.1) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 40%);
+}
+
+body.theme-pastel * {
+    border-radius: 30px !important;
+}
+
+body.theme-pastel .glass {
+    backdrop-filter: blur(10px);
+    box-shadow: 0 15px 35px rgba(236, 72, 153, 0.1);
+    border: 2px solid #fbcfe8;
+}
+
+body.theme-pastel .card:hover,
+body.theme-pastel .project-card:hover {
+    border-color: #ec4899;
+    transform: translateY(-5px);
+}
+
+body.theme-pastel .btn {
+    border-radius: 50px !important;
+    background: linear-gradient(135deg, var(--secondary), var(--primary));
+    color: white;
+    border: none;
+    box-shadow: 0 5px 15px var(--primary-glow);
+    font-weight: 800;
+}
+
+body.theme-pastel .btn-outline {
+    background: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+}
+
+body.theme-pastel .btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--primary-glow);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+body.theme-pastel .section-title {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+body.theme-pastel .avatar-main {
+    border: 8px solid var(--glass-border);
+    box-shadow: 0 15px 35px var(--primary-glow);
+    border-radius: 50% !important;
+}
+
+body.theme-pastel .avatar-bg {
+    background: radial-gradient(circle, var(--glass-border) 0%, transparent 70%);
+}
+
+body.theme-pastel .timeline::before {
+    background: var(--glass-border);
 }
