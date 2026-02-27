@@ -165,3 +165,64 @@ if ('serviceWorker' in navigator) {
         });
     });
 }
+
+// ==== GITHUB API - FETCH REPOSITORIES ==== //
+async function fetchGithubProjects() {
+    const username = 'fatihpatir'; // GitHub kullanıcı adınız
+    const githubGrid = document.getElementById('github-projects-grid');
+
+    if (!githubGrid) return;
+
+    try {
+        // İstemediğimiz repoların listesini büyütüyoruz ki daha fazlasını çekip filtreleyelim (per_page=100)
+        const response = await fetch(`https://api.github.com/users/${username}/repos?sort=updated&per_page=100`);
+
+        if (!response.ok) throw new Error('GitHub API Error');
+
+        const repos = await response.json();
+
+        // Gizlenmesini istediğiniz repoların isimlerini buraya yazın
+        const excludedRepos = ['fatihpatir', 'web'];
+
+        // Repoları filtrele ve arrayde tut (Tüm diğer projeleri göstermek için .slice() limitini kaldırdık)
+        const filteredRepos = repos.filter(repo => !excludedRepos.includes(repo.name));
+
+        let htmlContent = '';
+
+        if (filteredRepos.length === 0) {
+            htmlContent = '<div style="text-align: center; width: 100%;">Henüz listelenecek proje bulunamadı.</div>';
+        } else {
+            filteredRepos.forEach(repo => {
+                const description = repo.description || 'Açıklama bulunmuyor.';
+                const language = repo.language || 'Code';
+                const stars = repo.stargazers_count;
+
+                htmlContent += `
+                    <div class="project-card glass">
+                        <i class="fab fa-github main-icon" style="font-size: 2.5rem; color: var(--light);"></i>
+                        <h3>${repo.name}</h3>
+                        <p>${description}</p>
+                        
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.5rem; font-size:0.85rem; color: #94a3b8;">
+                            <span><i class="fas fa-code"></i> ${language}</span>
+                            <span><i class="fas fa-star" style="color:#fbbf24;"></i> ${stars}</span>
+                        </div>
+                        
+                        <a href="${repo.html_url}" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">İncele <i class="fas fa-external-link-alt" style="font-size:0.8rem; margin-left:5px;"></i></a>
+                    </div>
+                `;
+            });
+        }
+
+        githubGrid.innerHTML = htmlContent;
+
+    } catch (error) {
+        console.error('Projeler çekilirken hata:', error);
+        githubGrid.innerHTML = '<div style="text-align: center; width: 100%; color: #ef4444;">GitHub projeleri şu an yüklenemiyor.</div>';
+    }
+}
+
+// Sayfa yüklendiğinde projeleri çek
+document.addEventListener('DOMContentLoaded', () => {
+    fetchGithubProjects();
+});
