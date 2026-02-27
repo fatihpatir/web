@@ -1,13 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Mobile Menu Toggle
     const logo = document.querySelector('.logo');
     const navLinks = document.querySelector('.nav-links');
+    const infoBtn = document.getElementById('info-btn');
+    const infoPopup = document.getElementById('info-popup');
+    const closePopup = document.getElementById('close-popup');
 
+    // Mobil Menü Toggle
     if (logo) {
         logo.addEventListener('click', () => {
             if (window.innerWidth <= 768) {
                 navLinks.classList.toggle('active');
-                document.body.classList.toggle('menu-active');
                 const icon = logo.querySelector('i');
                 if (icon) {
                     icon.classList.toggle('fa-terminal');
@@ -17,9 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Smooth Scroll Reveal
-    const revealElements = document.querySelectorAll('.card, .hero-text, .hero-image, .section-title');
+    // Linke tıklayınca menüyü kapat
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
 
+    // PWA Info Popup
+    if (infoBtn) {
+        infoBtn.addEventListener('click', () => infoPopup.style.display = 'flex');
+    }
+    if (closePopup) {
+        closePopup.addEventListener('click', () => infoPopup.style.display = 'none');
+    }
+
+    // Scroll Reveal (Mevcut kodun)
+    const revealElements = document.querySelectorAll('.card, .hero-text, .hero-image');
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -35,24 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'all 0.6s ease-out';
         revealObserver.observe(el);
     });
-
-    // Form Submission Feedback
-    const contactForm = document.getElementById('contactForm');
-    if (contactForm) {
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const btn = contactForm.querySelector('button');
-            const originalText = btn.innerText;
-
-            btn.innerText = 'Gönderiliyor...';
-            btn.disabled = true;
-
-            setTimeout(() => {
-                alert('Mesajınız alındı! Teşekkürler.');
-                btn.innerText = originalText;
-                btn.disabled = false;
-                contactForm.reset();
-            }, 1500);
-        });
-    }
 });
+
+// Service Worker Kaydı (PWA için)
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW fail', err));
+    });
+}
