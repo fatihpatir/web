@@ -11,6 +11,8 @@
     --glass-border: rgba(255, 255, 255, 0.08);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     --text-color: var(--light);
+    --text-muted: #94a3b8;
+    --text-motto: #cbd5e1;
 }
 
 body.light-mode {
@@ -18,10 +20,12 @@ body.light-mode {
     --darker: #e2e8f0;
     --light: #0f172a;
     --secondary: #0ea5e9;
-    --glass-bg: rgba(255, 255, 255, 0.7);
+    --glass-bg: rgba(255, 255, 255, 0.75);
     --glass-border: rgba(0, 0, 0, 0.1);
     --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
     --text-color: #0f172a;
+    --text-muted: #475569;
+    --text-motto: #334155;
 }
 
 * {
@@ -123,7 +127,7 @@ section {
     max-width: 100%;
     border-radius: 0;
     padding: 1rem 2rem;
-    background: rgba(2, 6, 23, 0.85);
+    background: var(--glass-bg);
     border-bottom: 1px solid var(--glass-border);
     border-top: none;
     border-left: none;
@@ -194,7 +198,7 @@ section {
     display: none;
     background: none;
     border: none;
-    color: var(--light);
+    color: var(--text-color);
     font-size: 1.8rem;
     cursor: pointer;
 }
@@ -264,7 +268,7 @@ section {
 
 .hero-text .motto {
     font-size: 1.3rem;
-    color: #cbd5e1;
+    color: var(--text-motto);
     margin-bottom: 2.5rem;
     font-style: italic;
     border-left: 4px solid var(--primary);
@@ -378,7 +382,7 @@ section {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    color: #cbd5e1;
+    color: var(--text-motto);
 }
 
 .bio-content p strong {
@@ -443,7 +447,7 @@ section {
 }
 
 .timeline-content p {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 0.95rem;
 }
 
@@ -482,7 +486,7 @@ section {
 }
 
 .card p {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
 }
@@ -571,7 +575,7 @@ section {
 }
 
 .project-card p {
-    color: #94a3b8;
+    color: var(--text-muted);
     font-size: 0.95rem;
     margin-bottom: 2rem;
     flex-grow: 1;
@@ -641,15 +645,26 @@ section {
 }
 
 .social-icon {
-    font-size: 5rem;
-    color: #E1306C;
-    margin-bottom: 1rem;
+    font-size: 4rem;
     transition: all 0.3s ease;
 }
 
-.social-icon:hover {
+.social-icon.instagram {
+    color: #E1306C;
+}
+
+.social-icon.facebook {
+    color: #1877F2;
+}
+
+.social-icon.instagram:hover {
     transform: scale(1.1);
     filter: drop-shadow(0 0 20px rgba(225, 48, 108, 0.5));
+}
+
+.social-icon.facebook:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 20px rgba(24, 119, 242, 0.5));
 }
 
 /* Footer & Popup */
@@ -690,7 +705,7 @@ footer {
 
 .popup-card p {
     margin-bottom: 0.5rem;
-    color: #cbd5e1;
+    color: var(--text-motto);
 }
 
 .popup-card button {
@@ -739,7 +754,7 @@ footer {
         right: -100%;
         width: 70%;
         height: 100vh;
-        background: rgba(2, 6, 23, 0.95);
+        background: var(--glass-bg);
         backdrop-filter: blur(20px);
         flex-direction: column;
         justify-content: center;

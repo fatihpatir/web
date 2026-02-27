@@ -203,7 +203,7 @@ async function fetchGithubProjects() {
                         <h3>${repo.name}</h3>
                         <p>${description}</p>
                         
-                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.5rem; font-size:0.85rem; color: #94a3b8;">
+                        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 1.5rem; font-size:0.85rem; color: var(--text-muted);">
                             <span><i class="fas fa-code"></i> ${language}</span>
                             <span><i class="fas fa-star" style="color:#fbbf24;"></i> ${stars}</span>
                         </div>
