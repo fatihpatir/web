@@ -259,10 +259,12 @@ async function fetchGithubProjects() {
                 const description = repo.description || 'Açıklama bulunmuyor.';
                 const language = repo.language || 'Code';
                 const stars = repo.stargazers_count;
+                // Dinamik Canlı Link Oluşturma
+                const liveUrl = `https://${username}.github.io/${repo.name}`;
 
                 htmlContent += `
                     <div class="project-card glass">
-                        <i class="fab fa-github main-icon" style="font-size: 2.5rem; color: var(--light);"></i>
+                        <i class="fas fa-rocket main-icon" style="font-size: 2.5rem; color: var(--secondary);"></i>
                         <h3>${repo.name}</h3>
                         <p>${description}</p>
                         
@@ -271,7 +273,7 @@ async function fetchGithubProjects() {
                             <span><i class="fas fa-star" style="color:#fbbf24;"></i> ${stars}</span>
                         </div>
                         
-                        <a href="${repo.html_url}" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">İncele <i class="fas fa-external-link-alt" style="font-size:0.8rem; margin-left:5px;"></i></a>
+                        <a href="${liveUrl}" target="_blank" class="btn btn-outline" style="text-align: center; padding: 0.5rem 1rem;">Uygulamayı Aç <i class="fas fa-play" style="font-size:0.8rem; margin-left:5px;"></i></a>
                     </div>
                 `;
             });
